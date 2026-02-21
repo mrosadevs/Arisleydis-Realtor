@@ -1,0 +1,29 @@
+[
+  {
+    "id": "90bcc060-4f5f-4204-9eb0-97802443ad17",
+    "slug": "1827-sea-shell-way-north-port-fl-34286",
+    "title": "1827 Sea Shell Way, North Port, FL 34286",
+    "city": "North Port",
+    "address": "1827 Sea Shell Way, North Port, FL 34286",
+    "price": 469000,
+    "beds": 3,
+    "baths": 2,
+    "sqft": 1975,
+    "type": "Modern Ranch",
+    "status": "For Sale",
+    "description": "A fully refreshed modern ranch with premium finishes and a split-bedroom layout ideal for families or seasonal buyers. Located close to top schools, parks, and Gulf Coast amenities.",
+    "features": [
+      "New impact-rated windows",
+      "Large primary suite with walk-in closet",
+      "Energy-efficient appliances",
+      "Two-car garage with storage system"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=2000&q=80"
+    ],
+    "createdAt": "2026-02-21T00:00:00.000Z",
+    "updatedAt": "2026-02-21T00:00:00.000Z"
+  }
+]
