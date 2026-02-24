@@ -5,23 +5,23 @@ import { useEffect, useRef, useState } from "react";
 const services = [
   {
     title: "Property Buying",
-    text: "From showings to negotiations, you get end-to-end support so your purchase is strategic and stress-free."
+    text: "From showings to negotiations, you get end-to-end support so your purchase is strategic and stress-free. Every detail is handled with care."
   },
   {
     title: "Property Selling",
-    text: "Pricing strategy, premium marketing, and buyer qualification designed to move your listing confidently."
+    text: "Pricing strategy, premium marketing, and buyer qualification designed to move your listing confidently and maximize your return."
   },
   {
     title: "Real Estate Investments",
-    text: "Analyze rental potential, renovation opportunities, and long-term upside before you commit capital."
+    text: "Analyze rental potential, renovation opportunities, and long-term upside before you commit capital. Data-driven investment guidance."
   },
   {
     title: "Market Analysis",
-    text: "Get local pricing intelligence, neighborhood trends, and timing guidance based on up-to-date demand data."
+    text: "Get local pricing intelligence, neighborhood trends, and timing guidance based on up-to-date demand data and market conditions."
   },
   {
     title: "Relocation Services",
-    text: "Personalized area tours, school and lifestyle guidance, and relocation planning for a smooth transition."
+    text: "Personalized area tours, school and lifestyle guidance, and relocation planning for a smooth transition to your new community."
   }
 ];
 
@@ -44,7 +44,8 @@ export function ServicesAccordion() {
     <section id="services" className="section container">
       <div className="section-heading stacked">
         <p className="kicker">Services</p>
-        <h2>Expert guidance tailored to every stage of your real estate journey</h2>
+        <h2>Expert guidance at every stage</h2>
+        <hr className="section-divider" />
       </div>
 
       <div className="services-list">
@@ -61,7 +62,7 @@ export function ServicesAccordion() {
               >
                 <span>{service.title}</span>
                 <span className="service-icon" aria-hidden="true">
-                  {open ? "−" : "+"}
+                  {open ? "\u2212" : "+"}
                 </span>
               </button>
 

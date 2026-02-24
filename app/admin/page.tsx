@@ -439,7 +439,7 @@ export default function AdminPage() {
       <section className="admin-header">
         <div>
           <p className="kicker">Admin Portal</p>
-          <h1>Property Management Dashboard</h1>
+          <h1>Property Management</h1>
         </div>
 
         <button type="button" className="btn btn-secondary" onClick={handleLogout}>
@@ -458,6 +458,7 @@ export default function AdminPage() {
                 type="text"
                 value={form.title}
                 onChange={(event) => setForm((prev) => ({ ...prev, title: event.target.value }))}
+                placeholder="Property title"
                 required
               />
             </label>
@@ -469,6 +470,7 @@ export default function AdminPage() {
                   type="text"
                   value={form.city}
                   onChange={(event) => setForm((prev) => ({ ...prev, city: event.target.value }))}
+                  placeholder="e.g. Port Charlotte"
                   required
                 />
               </label>
@@ -479,6 +481,7 @@ export default function AdminPage() {
                   type="text"
                   value={form.type}
                   onChange={(event) => setForm((prev) => ({ ...prev, type: event.target.value }))}
+                  placeholder="e.g. Single Family"
                   required
                 />
               </label>
@@ -490,6 +493,7 @@ export default function AdminPage() {
                 type="text"
                 value={form.address}
                 onChange={(event) => setForm((prev) => ({ ...prev, address: event.target.value }))}
+                placeholder="Full property address"
                 required
               />
             </label>
@@ -502,6 +506,7 @@ export default function AdminPage() {
                   min="0"
                   value={form.price}
                   onChange={(event) => setForm((prev) => ({ ...prev, price: event.target.value }))}
+                  placeholder="0"
                   required
                 />
               </label>
@@ -514,6 +519,7 @@ export default function AdminPage() {
                   step="1"
                   value={form.beds}
                   onChange={(event) => setForm((prev) => ({ ...prev, beds: event.target.value }))}
+                  placeholder="0"
                   required
                 />
               </label>
@@ -526,6 +532,7 @@ export default function AdminPage() {
                   step="0.5"
                   value={form.baths}
                   onChange={(event) => setForm((prev) => ({ ...prev, baths: event.target.value }))}
+                  placeholder="0"
                   required
                 />
               </label>
@@ -537,6 +544,7 @@ export default function AdminPage() {
                   min="0"
                   value={form.sqft}
                   onChange={(event) => setForm((prev) => ({ ...prev, sqft: event.target.value }))}
+                  placeholder="0"
                   required
                 />
               </label>
@@ -563,6 +571,7 @@ export default function AdminPage() {
                 rows={5}
                 value={form.description}
                 onChange={(event) => setForm((prev) => ({ ...prev, description: event.target.value }))}
+                placeholder="Describe the property..."
                 required
               />
             </label>
@@ -573,6 +582,7 @@ export default function AdminPage() {
                 rows={4}
                 value={form.featuresText}
                 onChange={(event) => setForm((prev) => ({ ...prev, featuresText: event.target.value }))}
+                placeholder="New impact-rated windows&#10;Large primary suite&#10;Energy-efficient appliances"
               />
             </label>
 
@@ -591,7 +601,7 @@ export default function AdminPage() {
                   placeholder="https://..."
                 />
                 <button type="button" className="btn btn-secondary" onClick={addImageByUrl}>
-                  Add image URL
+                  Add URL
                 </button>
               </div>
 
@@ -648,7 +658,7 @@ export default function AdminPage() {
                     <h3>{property.title}</h3>
                     <p>{property.address}</p>
                     <p>
-                      {property.status} • ${property.price.toLocaleString()}
+                      {property.status} &bull; ${property.price.toLocaleString()}
                     </p>
                     <div className="admin-listing-actions">
                       <button type="button" className="inline-link" onClick={() => startEdit(property)}>

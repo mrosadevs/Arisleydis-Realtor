@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 type PropertyGalleryProps = {
   title: string;
@@ -9,6 +9,22 @@ type PropertyGalleryProps = {
 
 export function PropertyGallery({ title, images }: PropertyGalleryProps) {
   const [active, setActive] = useState(images[0] ?? "");
+  const [fading, setFading] = useState(false);
+
+  const switchImage = useCallback(
+    (nextImage: string) => {
+      if (nextImage === active) return;
+      setFading(true);
+
+      const timeout = setTimeout(() => {
+        setActive(nextImage);
+        setFading(false);
+      }, 250);
+
+      return () => clearTimeout(timeout);
+    },
+    [active]
+  );
 
   if (images.length === 0) {
     return null;
@@ -16,7 +32,12 @@ export function PropertyGallery({ title, images }: PropertyGalleryProps) {
 
   return (
     <div className="property-gallery">
-      <img src={active} alt={title} className="property-gallery-main" />
+      <img
+        src={active}
+        alt={title}
+        className="property-gallery-main"
+        style={{ opacity: fading ? 0.3 : 1 }}
+      />
 
       <div className="property-gallery-strip">
         {images.map((image) => (
@@ -24,7 +45,7 @@ export function PropertyGallery({ title, images }: PropertyGalleryProps) {
             key={image}
             type="button"
             className={`property-thumb ${active === image ? "active" : ""}`}
-            onClick={() => setActive(image)}
+            onClick={() => switchImage(image)}
           >
             <img src={image} alt={title} />
           </button>

@@ -23,7 +23,7 @@ export default async function PropertyPage({ params }: { params: { slug: string 
   return (
     <main className="property-page container">
       <Link href="/" className="back-link">
-        Back to homepage
+        &larr; Back to all properties
       </Link>
 
       <div className="property-header-grid">
@@ -40,7 +40,7 @@ export default async function PropertyPage({ params }: { params: { slug: string 
             <span>{property.baths} Baths</span>
             <span>{property.sqft.toLocaleString()} sqft</span>
           </div>
-          <p>{property.type}</p>
+          <p className="muted">{property.type}</p>
         </div>
       </div>
 
@@ -61,6 +61,18 @@ export default async function PropertyPage({ params }: { params: { slug: string 
           </ul>
         </aside>
       </section>
+
+      <div className="property-cta-bar">
+        <p>Interested in this property? Get in touch for a private showing.</p>
+        <div className="contact-actions">
+          <a className="btn btn-primary" href="tel:+17864583373">
+            Call Now
+          </a>
+          <a className="btn btn-secondary" href="mailto:info@arisleydisrealtor.com">
+            Send Email
+          </a>
+        </div>
+      </div>
     </main>
   );
 }

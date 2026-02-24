@@ -37,7 +37,7 @@ export function FeaturedProperties({ properties }: FeaturedPropertiesProps) {
       <div className="section-heading">
         <div>
           <p className="kicker">Featured Properties</p>
-          <h2>Move-in ready listings selected for your lifestyle</h2>
+          <h2>Exclusive listings curated for you</h2>
         </div>
 
         <label className="filter-label">
@@ -76,7 +76,7 @@ export function FeaturedProperties({ properties }: FeaturedPropertiesProps) {
               </div>
 
               <Link href={`/properties/${property.slug}`} className="inline-link">
-                View details
+                View details &rarr;
               </Link>
             </div>
           </article>
