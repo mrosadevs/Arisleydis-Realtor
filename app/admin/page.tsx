@@ -84,6 +84,7 @@ export default function AdminPage() {
   const [uploading, setUploading] = useState(false);
   const [feedback, setFeedback] = useState<string>("");
   const [error, setError] = useState<string>("");
+  const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
 
   const isEditing = useMemo(() => editingId !== null, [editingId]);
 
@@ -224,7 +225,12 @@ export default function AdminPage() {
           body: formData
         });
 
-        const data = (await response.json()) as { url?: string; error?: string };
+        let data: { url?: string; error?: string } = {};
+        try {
+          data = (await response.json()) as { url?: string; error?: string };
+        } catch {
+          data = {};
+        }
 
         if (!response.ok || !data.url) {
           throw new Error(data.error ?? "Failed to upload one of the selected images.");
@@ -324,29 +330,35 @@ export default function AdminPage() {
   }
 
   async function handleDelete(id: string): Promise<void> {
-    const confirmed = window.confirm("Delete this listing?");
-
-    if (!confirmed) {
-      return;
-    }
-
     setError("");
     setFeedback("");
+    setConfirmDeleteId(null);
 
-    const response = await fetch(`/api/properties/${id}`, { method: "DELETE" });
-    const data = (await response.json()) as { error?: string };
+    try {
+      const response = await fetch(`/api/properties/${id}`, { method: "DELETE" });
 
-    if (!response.ok) {
-      setError(data.error ?? "Could not delete property.");
-      return;
+      let data: { error?: string } = {};
+      try {
+        data = (await response.json()) as { error?: string };
+      } catch {
+        data = {};
+      }
+
+      if (!response.ok) {
+        setError(data.error ?? "Could not delete property.");
+        return;
+      }
+
+      if (editingId === id) {
+        resetForm();
+      }
+
+      setFeedback("Property deleted.");
+      await refreshProperties();
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Network error. Please try again.";
+      setError(message);
     }
-
-    if (editingId === id) {
-      resetForm();
-    }
-
-    setFeedback("Property deleted.");
-    await refreshProperties();
   }
 
   function startEdit(property: Property): void {
@@ -664,13 +676,33 @@ export default function AdminPage() {
                       <button type="button" className="inline-link" onClick={() => startEdit(property)}>
                         Edit
                       </button>
-                      <button
-                        type="button"
-                        className="inline-link danger"
-                        onClick={() => void handleDelete(property.id)}
-                      >
-                        Delete
-                      </button>
+                      {confirmDeleteId === property.id ? (
+                        <>
+                          <span style={{ fontSize: "0.82rem", color: "var(--muted)" }}>Sure?</span>
+                          <button
+                            type="button"
+                            className="inline-link danger"
+                            onClick={() => void handleDelete(property.id)}
+                          >
+                            Yes, delete
+                          </button>
+                          <button
+                            type="button"
+                            className="inline-link"
+                            onClick={() => setConfirmDeleteId(null)}
+                          >
+                            Cancel
+                          </button>
+                        </>
+                      ) : (
+                        <button
+                          type="button"
+                          className="inline-link danger"
+                          onClick={() => setConfirmDeleteId(property.id)}
+                        >
+                          Delete
+                        </button>
+                      )}
                     </div>
                   </div>
                 </article>

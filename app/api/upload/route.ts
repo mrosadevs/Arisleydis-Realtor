@@ -21,7 +21,13 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
   }
 
-  const formData = await request.formData();
+  let formData: FormData;
+  try {
+    formData = await request.formData();
+  } catch {
+    return NextResponse.json({ error: "Invalid form data." }, { status: 400 });
+  }
+
   const file = formData.get("file");
 
   if (!(file instanceof File)) {
@@ -36,17 +42,22 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Image is too large. Max size is 10MB." }, { status: 400 });
   }
 
-  const bytes = await file.arrayBuffer();
-  const buffer = Buffer.from(bytes);
+  try {
+    const bytes = await file.arrayBuffer();
+    const buffer = Buffer.from(bytes);
 
-  const uploadDir = path.join(process.cwd(), "public", "uploads");
-  await mkdir(uploadDir, { recursive: true });
+    const uploadDir = path.join(process.cwd(), "public", "uploads");
+    await mkdir(uploadDir, { recursive: true });
 
-  const extension = extensionForMimeType(file.type);
-  const filename = `${randomUUID()}.${extension}`;
-  const target = path.join(uploadDir, filename);
+    const extension = extensionForMimeType(file.type);
+    const filename = `${randomUUID()}.${extension}`;
+    const target = path.join(uploadDir, filename);
 
-  await writeFile(target, buffer);
+    await writeFile(target, buffer);
 
-  return NextResponse.json({ url: `/uploads/${filename}` }, { status: 201 });
+    return NextResponse.json({ url: `/uploads/${filename}` }, { status: 201 });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Could not save the uploaded file.";
+    return NextResponse.json({ error: message }, { status: 500 });
+  }
 }

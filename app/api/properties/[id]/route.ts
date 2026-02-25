@@ -100,11 +100,16 @@ export async function DELETE(_: Request, { params }: { params: { id: string } })
     return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
   }
 
-  const removed = await deleteProperty(params.id);
+  try {
+    const removed = await deleteProperty(params.id);
 
-  if (!removed) {
-    return NextResponse.json({ error: "Property not found." }, { status: 404 });
+    if (!removed) {
+      return NextResponse.json({ error: "Property not found." }, { status: 404 });
+    }
+
+    return NextResponse.json({ ok: true });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Could not delete property.";
+    return NextResponse.json({ error: message }, { status: 500 });
   }
-
-  return NextResponse.json({ ok: true });
 }
