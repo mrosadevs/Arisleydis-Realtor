@@ -19,21 +19,21 @@ const inter = Inter({
 
 // TODO: Update metadataBase with your live domain
 export const metadata: Metadata = {
-  title: "Arisleydis Cruz | Luxury Florida Real Estate",
+  title: "Arisleydis Cruz | Florida Real Estate",
   description:
-    "Arisleydis Cruz - Your trusted luxury realtor in Florida. Buy, sell, and invest with personalized guidance and exclusive property listings across the Gulf Coast.",
+    "Arisleydis Cruz - Your trusted realtor in Florida. Buy, sell, and invest with personalized guidance and exclusive property listings across the Gulf Coast.",
   openGraph: {
-    title: "Arisleydis Cruz | Luxury Florida Real Estate",
+    title: "Arisleydis Cruz | Florida Real Estate",
     description:
-      "Your trusted luxury realtor in Florida. Buy, sell, and invest with personalized guidance and exclusive property listings across the Gulf Coast.",
+      "Your trusted realtor in Florida. Buy, sell, and invest with personalized guidance and exclusive property listings across the Gulf Coast.",
     siteName: "Arisleydis Cruz Realty",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Arisleydis Cruz | Luxury Florida Real Estate",
+    title: "Arisleydis Cruz | Florida Real Estate",
     description:
-      "Your trusted luxury realtor in Florida. Buy, sell, and invest with personalized guidance and exclusive listings.",
+      "Your trusted realtor in Florida. Buy, sell, and invest with personalized guidance and exclusive listings.",
   },
 };
 

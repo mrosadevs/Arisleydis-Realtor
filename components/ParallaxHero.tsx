@@ -48,7 +48,7 @@ export function ParallaxHero({ backgroundImage }: ParallaxHeroProps) {
       <div className="hero-glow" />
 
       <div className="hero-content container">
-        <p className="hero-eyebrow">Luxury Florida Real Estate</p>
+        <p className="hero-eyebrow">Florida Real Estate</p>
         <h1>
           Arisleydis<br />
           <span className="hero-gold">Cruz</span>

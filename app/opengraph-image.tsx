@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Arisleydis Cruz | Luxury Florida Real Estate";
+export const alt = "Arisleydis Cruz | Florida Real Estate";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const runtime = "edge";
@@ -72,7 +72,7 @@ export default function OGImage() {
             marginBottom: "28px",
           }}
         >
-          Luxury Real Estate
+          Florida Real Estate
         </div>
 
         {/* Name */}
