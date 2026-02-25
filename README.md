@@ -1,4 +1,4 @@
-# 🏡 Arisleydis Cruz — Luxury Florida Real Estate
+# 🏡 Arisleydis Cruz — Florida Real Estate
 
 ### Your Trusted Realtor in Florida
 
