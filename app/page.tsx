@@ -33,6 +33,48 @@ export default async function HomePage() {
     <>
       <ParallaxHero backgroundImage={heroImage} />
 
+      {/* ───── MARQUEE TICKER ───── */}
+      <div className="marquee-strip" aria-hidden="true">
+        <div className="marquee-track">
+          <span>Port Charlotte</span>
+          <span className="marquee-accent">◆</span>
+          <span>North Port</span>
+          <span className="marquee-accent">◆</span>
+          <span>Punta Gorda</span>
+          <span className="marquee-accent">◆</span>
+          <span>Englewood</span>
+          <span className="marquee-accent">◆</span>
+          <span>Venice</span>
+          <span className="marquee-accent">◆</span>
+          <span>Buyer Representation</span>
+          <span className="marquee-accent">◆</span>
+          <span>Seller Services</span>
+          <span className="marquee-accent">◆</span>
+          <span>Investment Properties</span>
+          <span className="marquee-accent">◆</span>
+          <span>Relocation Assistance</span>
+          <span className="marquee-accent">◆</span>
+          <span>Port Charlotte</span>
+          <span className="marquee-accent">◆</span>
+          <span>North Port</span>
+          <span className="marquee-accent">◆</span>
+          <span>Punta Gorda</span>
+          <span className="marquee-accent">◆</span>
+          <span>Englewood</span>
+          <span className="marquee-accent">◆</span>
+          <span>Venice</span>
+          <span className="marquee-accent">◆</span>
+          <span>Buyer Representation</span>
+          <span className="marquee-accent">◆</span>
+          <span>Seller Services</span>
+          <span className="marquee-accent">◆</span>
+          <span>Investment Properties</span>
+          <span className="marquee-accent">◆</span>
+          <span>Relocation Assistance</span>
+          <span className="marquee-accent">◆</span>
+        </div>
+      </div>
+
       <main>
         {/* ───── ABOUT ───── */}
         <section id="about" className="section container about-grid">
@@ -96,6 +138,7 @@ export default async function HomePage() {
             {testimonials.map((testimonial, index) => (
               <Reveal key={testimonial.author} delayMs={index * 150}>
                 <div className="testimonial-card">
+                  <div className="testimonial-stars" aria-label="5 stars">★★★★★</div>
                   <p className="testimonial-text">{testimonial.text}</p>
                   <span className="testimonial-author">{testimonial.author}</span>
                 </div>
@@ -201,6 +244,13 @@ export default async function HomePage() {
           </div>
         </footer>
       </main>
+
+      {/* ───── STICKY MOBILE CTA ───── */}
+      <div className="mobile-sticky-cta">
+        <a href="tel:+17864583373" className="btn btn-primary">
+          📞 Call Arisleydis
+        </a>
+      </div>
     </>
   );
 }

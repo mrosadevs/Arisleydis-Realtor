@@ -25,5 +25,140 @@
     ],
     "createdAt": "2026-02-21T00:00:00.000Z",
     "updatedAt": "2026-02-21T00:00:00.000Z"
+  },
+  {
+    "id": "b2e14c3a-7d8f-4a21-9e5b-8c0d3f2a1e94",
+    "slug": "3412-harbor-view-dr-port-charlotte-fl-33948",
+    "title": "3412 Harbor View Dr, Port Charlotte, FL 33948",
+    "city": "Port Charlotte",
+    "address": "3412 Harbor View Dr, Port Charlotte, FL 33948",
+    "price": 349900,
+    "beds": 3,
+    "baths": 2,
+    "sqft": 1780,
+    "type": "Pool Home",
+    "status": "For Sale",
+    "description": "Charming pool home in the heart of Port Charlotte with a screened lanai and newly renovated kitchen. This well-maintained property sits on a quiet street close to shopping, dining, and major highways.",
+    "features": [
+      "Heated in-ground pool with screened lanai",
+      "Renovated kitchen with granite countertops",
+      "Split bedroom floor plan for added privacy",
+      "Mature landscaping and fully fenced yard"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80"
+    ],
+    "createdAt": "2026-02-20T00:00:00.000Z",
+    "updatedAt": "2026-02-20T00:00:00.000Z"
+  },
+  {
+    "id": "c3f25d4b-8e9a-5b32-0f6c-9d1e4a3b2f05",
+    "slug": "5918-tarpon-bay-blvd-punta-gorda-fl-33950",
+    "title": "5918 Tarpon Bay Blvd, Punta Gorda, FL 33950",
+    "city": "Punta Gorda",
+    "address": "5918 Tarpon Bay Blvd, Punta Gorda, FL 33950",
+    "price": 629000,
+    "beds": 4,
+    "baths": 3,
+    "sqft": 2654,
+    "type": "Waterfront Estate",
+    "status": "For Sale",
+    "description": "Stunning waterfront estate with direct sailboat access and a private dock. This meticulously updated home features soaring ceilings, an open-concept layout, and panoramic water views from every main living area.",
+    "features": [
+      "Direct sailboat access with 40-ft private dock",
+      "Soaring vaulted ceilings up to 18 feet",
+      "Chef's kitchen with gas range and island seating",
+      "Primary suite with water views and spa bath"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=2000&q=80"
+    ],
+    "createdAt": "2026-02-18T00:00:00.000Z",
+    "updatedAt": "2026-02-18T00:00:00.000Z"
+  },
+  {
+    "id": "d4a36e5c-9f0b-6c43-1a7d-0e2f5b4c3a16",
+    "slug": "221-gulf-winds-ln-englewood-fl-34223",
+    "title": "221 Gulf Winds Ln, Englewood, FL 34223",
+    "city": "Englewood",
+    "address": "221 Gulf Winds Ln, Englewood, FL 34223",
+    "price": 1850,
+    "beds": 3,
+    "baths": 2,
+    "sqft": 1540,
+    "type": "Garden Villa",
+    "status": "For Rent",
+    "description": "Light-filled garden villa minutes from Englewood Beach. Perfect for seasonal renters or those relocating to the Gulf Coast. Enjoy an open floor plan, stainless appliances, and a large screened patio.",
+    "features": [
+      "Minutes to Englewood Beach",
+      "Stainless steel appliances included",
+      "Screened patio with private garden area",
+      "Community pool and lawn care included in rent"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=2000&q=80"
+    ],
+    "createdAt": "2026-02-15T00:00:00.000Z",
+    "updatedAt": "2026-02-15T00:00:00.000Z"
+  },
+  {
+    "id": "e5b47f6d-0a1c-7d54-2b8e-1f3a6c5d4b27",
+    "slug": "8840-venetian-way-venice-fl-34285",
+    "title": "8840 Venetian Way, Venice, FL 34285",
+    "city": "Venice",
+    "address": "8840 Venetian Way, Venice, FL 34285",
+    "price": 715000,
+    "beds": 4,
+    "baths": 3,
+    "sqft": 2980,
+    "type": "Executive Home",
+    "status": "Under Contract",
+    "description": "Elegant executive home in a gated Venice community with a resort-style pool and outdoor kitchen. Premium finishes throughout, a 3-car garage, and a peaceful preserve view with no rear neighbors.",
+    "features": [
+      "Gated community with 24-hour security",
+      "Resort-style pool and outdoor summer kitchen",
+      "3-car garage with epoxy-coated floors",
+      "Private preserve view with no rear neighbors"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1560448205-4d9b3e6bb6db?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=2000&q=80"
+    ],
+    "createdAt": "2026-02-10T00:00:00.000Z",
+    "updatedAt": "2026-02-10T00:00:00.000Z"
+  },
+  {
+    "id": "f6c58a7e-1b2d-8e65-3c9f-2a4b7d6e5c38",
+    "slug": "1104-orange-grove-blvd-port-charlotte-fl-33952",
+    "title": "1104 Orange Grove Blvd, Port Charlotte, FL 33952",
+    "city": "Port Charlotte",
+    "address": "1104 Orange Grove Blvd, Port Charlotte, FL 33952",
+    "price": 399000,
+    "beds": 3,
+    "baths": 2,
+    "sqft": 1895,
+    "type": "Updated Ranch",
+    "status": "Sold",
+    "description": "Beautifully updated ranch home that sold above asking price in just 9 days. A showcase of what strategic pricing and professional staging can achieve for sellers in today's market.",
+    "features": [
+      "Sold above asking price in 9 days",
+      "New roof installed 2024",
+      "Luxury vinyl plank flooring throughout",
+      "Oversized corner lot with a private backyard"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1560184897-ae75f418493e?auto=format&fit=crop&w=2000&q=80"
+    ],
+    "createdAt": "2026-01-30T00:00:00.000Z",
+    "updatedAt": "2026-01-30T00:00:00.000Z"
   }
 ]

@@ -62,9 +62,24 @@ export function ParallaxHero({ backgroundImage }: ParallaxHeroProps) {
           <a href="#featured" className="btn btn-primary">
             View Properties
           </a>
-          <a href="#contact" className="btn btn-secondary">
+          <a href="#contact" className="btn btn-secondary" style={{ borderColor: "rgba(201,169,110,0.45)", color: "#e8d5a3" }}>
             Book a Consultation
           </a>
+        </div>
+
+        <div className="hero-stats">
+          <div className="hero-stat">
+            <span className="hero-stat-num">100+</span>
+            <span className="hero-stat-label">Clients Served</span>
+          </div>
+          <div className="hero-stat">
+            <span className="hero-stat-num">5★</span>
+            <span className="hero-stat-label">Client Rating</span>
+          </div>
+          <div className="hero-stat">
+            <span className="hero-stat-num">5+</span>
+            <span className="hero-stat-label">Years in FL</span>
+          </div>
         </div>
       </div>
 
