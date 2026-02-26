@@ -5,6 +5,7 @@
  */
 
 import { randomUUID } from "crypto";
+import { unstable_noStore as noStore } from "next/cache";
 import { toSlug } from "@/lib/slug";
 import { Property, PropertyInput } from "@/lib/types";
 
@@ -312,14 +313,17 @@ async function fileDelete(id: string): Promise<boolean> {
 // ─── Public API — routes to correct backend automatically ─────────────────────
 
 export async function listProperties(): Promise<Property[]> {
+  noStore();
   return isSupabaseConfigured() ? supabaseListProperties() : fileListProperties();
 }
 
 export async function getPropertyBySlug(slug: string): Promise<Property | null> {
+  noStore();
   return isSupabaseConfigured() ? supabaseGetBySlug(slug) : fileGetBySlug(slug);
 }
 
 export async function getPropertyById(id: string): Promise<Property | null> {
+  noStore();
   return isSupabaseConfigured() ? supabaseGetById(id) : fileGetById(id);
 }
 
