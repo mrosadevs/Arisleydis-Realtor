@@ -1,4 +1,3 @@
-import { put } from "@vercel/blob";
 import { randomUUID } from "crypto";
 import { NextResponse } from "next/server";
 import { isCurrentRequestAuthenticated } from "@/lib/auth";
@@ -47,18 +46,29 @@ export async function POST(request: Request) {
     );
   }
 
+  const extension = extensionForMimeType(file.type);
+  const filename = `${randomUUID()}.${extension}`;
+  const bytes = await file.arrayBuffer();
+  const buffer = Buffer.from(bytes);
+
   try {
-    const extension = extensionForMimeType(file.type);
-    const filename = `properties/${randomUUID()}.${extension}`;
-    const bytes = await file.arrayBuffer();
-    const buffer = Buffer.from(bytes);
-
-    const blob = await put(filename, buffer, {
-      access: "public",
-      contentType: file.type,
-    });
-
-    return NextResponse.json({ url: blob.url }, { status: 201 });
+    if (process.env.BLOB_READ_WRITE_TOKEN) {
+      // Production: store on Vercel Blob CDN
+      const { put } = await import("@vercel/blob");
+      const blob = await put(`properties/${filename}`, buffer, {
+        access: "public",
+        contentType: file.type,
+      });
+      return NextResponse.json({ url: blob.url }, { status: 201 });
+    } else {
+      // Local dev: store in public/uploads
+      const { mkdir, writeFile } = await import("fs/promises");
+      const path = await import("path");
+      const uploadDir = path.join(process.cwd(), "public", "uploads");
+      await mkdir(uploadDir, { recursive: true });
+      await writeFile(path.join(uploadDir, filename), buffer);
+      return NextResponse.json({ url: `/uploads/${filename}` }, { status: 201 });
+    }
   } catch (error) {
     const message = error instanceof Error ? error.message : "Could not save the uploaded file.";
     return NextResponse.json({ error: message }, { status: 500 });
