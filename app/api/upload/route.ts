@@ -52,16 +52,27 @@ export async function POST(request: Request) {
   const buffer = Buffer.from(bytes);
 
   try {
-    if (process.env.BLOB_READ_WRITE_TOKEN) {
-      // Production: store on Vercel Blob CDN
-      const { put } = await import("@vercel/blob");
-      const blob = await put(`properties/${filename}`, buffer, {
-        access: "public",
-        contentType: file.type,
-      });
-      return NextResponse.json({ url: blob.url }, { status: 201 });
+    if (process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) {
+      // Production + local dev with Supabase: store in Supabase Storage
+      const { createClient } = await import("@supabase/supabase-js");
+      const supabase = createClient(
+        process.env.SUPABASE_URL,
+        process.env.SUPABASE_SERVICE_ROLE_KEY
+      );
+
+      const { error } = await supabase.storage
+        .from("property-images")
+        .upload(filename, buffer, { contentType: file.type, upsert: false });
+
+      if (error) throw new Error(error.message);
+
+      const { data } = supabase.storage
+        .from("property-images")
+        .getPublicUrl(filename);
+
+      return NextResponse.json({ url: data.publicUrl }, { status: 201 });
     } else {
-      // Local dev: store in public/uploads
+      // Fallback: local filesystem (no Supabase configured)
       const { mkdir, writeFile } = await import("fs/promises");
       const path = await import("path");
       const uploadDir = path.join(process.cwd(), "public", "uploads");
